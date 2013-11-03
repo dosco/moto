@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC065A9E1817BFC300683D96 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC065A9D1817BFC300683D96 /* ImageIO.framework */; };
+		AC065AA01817C48300683D96 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC065A9F1817C48300683D96 /* CoreMedia.framework */; };
+		AC0986C01824F81F00489784 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0986BB1824F81F00489784 /* UIImage+Alpha.m */; };
+		AC0986C11824F81F00489784 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0986BD1824F81F00489784 /* UIImage+Resize.m */; };
+		AC0986C21824F81F00489784 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0986BF1824F81F00489784 /* UIImage+RoundedCorner.m */; };
+		AC0986F118263D0300489784 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0986E918263D0300489784 /* AppIcon29x29.png */; };
+		AC0986F218263D0300489784 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0986EA18263D0300489784 /* AppIcon29x29@2x.png */; };
+		AC0986F318263D0300489784 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0986EB18263D0300489784 /* AppIcon40x40.png */; };
+		AC0986F418263D0300489784 /* AppIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0986EC18263D0300489784 /* AppIcon40x40@2x.png */; };
+		AC0986F518263D0300489784 /* AppIcon60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0986ED18263D0300489784 /* AppIcon60x60.png */; };
+		AC0986F618263D0300489784 /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0986EE18263D0300489784 /* AppIcon60x60@2x.png */; };
+		AC0986F718263D0300489784 /* AppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0986EF18263D0300489784 /* AppIcon76x76.png */; };
+		AC0986F818263D0300489784 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0986F018263D0300489784 /* AppIcon76x76@2x.png */; };
+		AC0986FD18263F6B00489784 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0986FA18263F6B00489784 /* libWeChatSDK.a */; };
+		AC40ABA01813396500350CA6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC40AB9F1813396500350CA6 /* MobileCoreServices.framework */; };
+		AC40ABA91813471A00350CA6 /* click.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40ABA71813471A00350CA6 /* click.png */; };
+		AC40ABAD18135FC500350CA6 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40ABAC18135FC500350CA6 /* cancel.png */; };
+		AC40ABAF1813B3E100350CA6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC40ABAE1813B3E100350CA6 /* AVFoundation.framework */; };
+		AC70D34D180A6D9D00B1C2DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC70D34C180A6D9D00B1C2DF /* UIKit.framework */; };
+		AC70D34F180A6D9D00B1C2DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC70D34E180A6D9D00B1C2DF /* Foundation.framework */; };
+		AC70D351180A6D9D00B1C2DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC70D350180A6D9D00B1C2DF /* CoreGraphics.framework */; };
+		AC70D357180A6D9D00B1C2DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC70D355180A6D9D00B1C2DF /* InfoPlist.strings */; };
+		AC70D359180A6D9D00B1C2DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC70D358180A6D9D00B1C2DF /* main.m */; };
+		AC70D35D180A6D9D00B1C2DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC70D35C180A6D9D00B1C2DF /* AppDelegate.m */; };
+		AC70D35F180A6D9D00B1C2DF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AC70D35E180A6D9D00B1C2DF /* Default.png */; };
+		AC70D361180A6D9D00B1C2DF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC70D360180A6D9D00B1C2DF /* Default@2x.png */; };
+		AC70D363180A6D9D00B1C2DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC70D362180A6D9D00B1C2DF /* Default-568h@2x.png */; };
+		AC70D384180A6E6800B1C2DF /* MotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC70D382180A6E6800B1C2DF /* MotoViewController.m */; };
+		AC70D385180A6E6800B1C2DF /* MotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC70D383180A6E6800B1C2DF /* MotoViewController.xib */; };
+		AC72217818224E1B004DDAA5 /* UIImage+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = AC72217718224E1B004DDAA5 /* UIImage+Extra.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC065A9D1817BFC300683D96 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		AC065A9F1817C48300683D96 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		AC0986BA1824F81F00489784 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Alpha.h"; path = "../../../../Desktop/UIImage-categories/UIImage+Alpha.h"; sourceTree = "<group>"; };
+		AC0986BB1824F81F00489784 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Alpha.m"; path = "../../../../Desktop/UIImage-categories/UIImage+Alpha.m"; sourceTree = "<group>"; };
+		AC0986BC1824F81F00489784 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Resize.h"; path = "../../../../Desktop/UIImage-categories/UIImage+Resize.h"; sourceTree = "<group>"; };
+		AC0986BD1824F81F00489784 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "../../../../Desktop/UIImage-categories/UIImage+Resize.m"; sourceTree = "<group>"; };
+		AC0986BE1824F81F00489784 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RoundedCorner.h"; path = "../../../../Desktop/UIImage-categories/UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		AC0986BF1824F81F00489784 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RoundedCorner.m"; path = "../../../../Desktop/UIImage-categories/UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		AC0986E918263D0300489784 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
+		AC0986EA18263D0300489784 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
+		AC0986EB18263D0300489784 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
+		AC0986EC18263D0300489784 /* AppIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x.png"; sourceTree = "<group>"; };
+		AC0986ED18263D0300489784 /* AppIcon60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon60x60.png; sourceTree = "<group>"; };
+		AC0986EE18263D0300489784 /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
+		AC0986EF18263D0300489784 /* AppIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon76x76.png; sourceTree = "<group>"; };
+		AC0986F018263D0300489784 /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
+		AC0986FA18263F6B00489784 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		AC0986FB18263F6B00489784 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		AC0986FC18263F6B00489784 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		AC40AB9F1813396500350CA6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		AC40ABA118133D7600350CA6 /* click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = click.png; path = images/click.png; sourceTree = "<group>"; };
+		AC40ABA71813471A00350CA6 /* click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = click.png; sourceTree = "<group>"; };
+		AC40ABAC18135FC500350CA6 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
+		AC40ABAE1813B3E100350CA6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AC70D349180A6D9D00B1C2DF /* Moto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC70D34C180A6D9D00B1C2DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AC70D34E180A6D9D00B1C2DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AC70D350180A6D9D00B1C2DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AC70D354180A6D9D00B1C2DF /* Moto-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moto-Info.plist"; sourceTree = "<group>"; };
+		AC70D356180A6D9D00B1C2DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AC70D358180A6D9D00B1C2DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AC70D35A180A6D9D00B1C2DF /* Moto-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moto-Prefix.pch"; sourceTree = "<group>"; };
+		AC70D35B180A6D9D00B1C2DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AC70D35C180A6D9D00B1C2DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AC70D35E180A6D9D00B1C2DF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AC70D360180A6D9D00B1C2DF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AC70D362180A6D9D00B1C2DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AC70D372180A6D9D00B1C2DF /* MotoMotos-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MotoMotos-Info.plist"; sourceTree = "<group>"; };
+		AC70D374180A6D9D00B1C2DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AC70D376180A6D9D00B1C2DF /* MotoMotos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MotoMotos.h; sourceTree = "<group>"; };
+		AC70D377180A6D9D00B1C2DF /* MotoMotos.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotoMotos.m; sourceTree = "<group>"; };
+		AC70D381180A6E6800B1C2DF /* MotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotoViewController.h; sourceTree = "<group>"; };
+		AC70D382180A6E6800B1C2DF /* MotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotoViewController.m; sourceTree = "<group>"; };
+		AC70D383180A6E6800B1C2DF /* MotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MotoViewController.xib; sourceTree = "<group>"; };
+		AC72217618224E1B004DDAA5 /* UIImage+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extra.h"; sourceTree = "<group>"; };
+		AC72217718224E1B004DDAA5 /* UIImage+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extra.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC70D346180A6D9D00B1C2DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC065AA01817C48300683D96 /* CoreMedia.framework in Frameworks */,
+				AC065A9E1817BFC300683D96 /* ImageIO.framework in Frameworks */,
+				AC0986FD18263F6B00489784 /* libWeChatSDK.a in Frameworks */,
+				AC40ABAF1813B3E100350CA6 /* AVFoundation.framework in Frameworks */,
+				AC40ABA01813396500350CA6 /* MobileCoreServices.framework in Frameworks */,
+				AC70D34D180A6D9D00B1C2DF /* UIKit.framework in Frameworks */,
+				AC70D34F180A6D9D00B1C2DF /* Foundation.framework in Frameworks */,
+				AC70D351180A6D9D00B1C2DF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC0986C31824F83000489784 /* UIImage Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC0986BA1824F81F00489784 /* UIImage+Alpha.h */,
+				AC0986BB1824F81F00489784 /* UIImage+Alpha.m */,
+				AC0986BC1824F81F00489784 /* UIImage+Resize.h */,
+				AC0986BD1824F81F00489784 /* UIImage+Resize.m */,
+				AC0986BE1824F81F00489784 /* UIImage+RoundedCorner.h */,
+				AC0986BF1824F81F00489784 /* UIImage+RoundedCorner.m */,
+				AC72217618224E1B004DDAA5 /* UIImage+Extra.h */,
+				AC72217718224E1B004DDAA5 /* UIImage+Extra.m */,
+			);
+			name = "UIImage Extensions";
+			sourceTree = "<group>";
+		};
+		AC0986F918263F6B00489784 /* WeChat API */ = {
+			isa = PBXGroup;
+			children = (
+				AC0986FA18263F6B00489784 /* libWeChatSDK.a */,
+				AC0986FB18263F6B00489784 /* WXApi.h */,
+				AC0986FC18263F6B00489784 /* WXApiObject.h */,
+			);
+			name = "WeChat API";
+			path = Frameworks/WeChat;
+			sourceTree = "<group>";
+		};
+		AC40ABA51813471A00350CA6 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AC0986E918263D0300489784 /* AppIcon29x29.png */,
+				AC0986EA18263D0300489784 /* AppIcon29x29@2x.png */,
+				AC0986EB18263D0300489784 /* AppIcon40x40.png */,
+				AC0986EC18263D0300489784 /* AppIcon40x40@2x.png */,
+				AC0986ED18263D0300489784 /* AppIcon60x60.png */,
+				AC0986EE18263D0300489784 /* AppIcon60x60@2x.png */,
+				AC0986EF18263D0300489784 /* AppIcon76x76.png */,
+				AC0986F018263D0300489784 /* AppIcon76x76@2x.png */,
+				AC40ABAC18135FC500350CA6 /* cancel.png */,
+				AC40ABA71813471A00350CA6 /* click.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		AC70D340180A6D9D00B1C2DF = {
+			isa = PBXGroup;
+			children = (
+				AC0986F918263F6B00489784 /* WeChat API */,
+				AC70D352180A6D9D00B1C2DF /* Moto */,
+				AC70D370180A6D9D00B1C2DF /* MotoMotos */,
+				AC70D34B180A6D9D00B1C2DF /* Frameworks */,
+				AC70D34A180A6D9D00B1C2DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC70D34A180A6D9D00B1C2DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC70D349180A6D9D00B1C2DF /* Moto.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC70D34B180A6D9D00B1C2DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC065A9F1817C48300683D96 /* CoreMedia.framework */,
+				AC065A9D1817BFC300683D96 /* ImageIO.framework */,
+				AC40ABAE1813B3E100350CA6 /* AVFoundation.framework */,
+				AC40AB9F1813396500350CA6 /* MobileCoreServices.framework */,
+				AC70D34C180A6D9D00B1C2DF /* UIKit.framework */,
+				AC70D34E180A6D9D00B1C2DF /* Foundation.framework */,
+				AC70D350180A6D9D00B1C2DF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC70D352180A6D9D00B1C2DF /* Moto */ = {
+			isa = PBXGroup;
+			children = (
+				AC0986C31824F83000489784 /* UIImage Extensions */,
+				AC70D35B180A6D9D00B1C2DF /* AppDelegate.h */,
+				AC70D35C180A6D9D00B1C2DF /* AppDelegate.m */,
+				AC70D381180A6E6800B1C2DF /* MotoViewController.h */,
+				AC70D382180A6E6800B1C2DF /* MotoViewController.m */,
+				AC70D383180A6E6800B1C2DF /* MotoViewController.xib */,
+				AC70D353180A6D9D00B1C2DF /* Supporting Files */,
+			);
+			path = Moto;
+			sourceTree = "<group>";
+		};
+		AC70D353180A6D9D00B1C2DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC40ABA51813471A00350CA6 /* images */,
+				AC40ABA118133D7600350CA6 /* click.png */,
+				AC70D354180A6D9D00B1C2DF /* Moto-Info.plist */,
+				AC70D355180A6D9D00B1C2DF /* InfoPlist.strings */,
+				AC70D358180A6D9D00B1C2DF /* main.m */,
+				AC70D35A180A6D9D00B1C2DF /* Moto-Prefix.pch */,
+				AC70D35E180A6D9D00B1C2DF /* Default.png */,
+				AC70D360180A6D9D00B1C2DF /* Default@2x.png */,
+				AC70D362180A6D9D00B1C2DF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC70D370180A6D9D00B1C2DF /* MotoMotos */ = {
+			isa = PBXGroup;
+			children = (
+				AC70D376180A6D9D00B1C2DF /* MotoMotos.h */,
+				AC70D377180A6D9D00B1C2DF /* MotoMotos.m */,
+				AC70D371180A6D9D00B1C2DF /* Supporting Files */,
+			);
+			path = MotoMotos;
+			sourceTree = "<group>";
+		};
+		AC70D371180A6D9D00B1C2DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC70D372180A6D9D00B1C2DF /* MotoMotos-Info.plist */,
+				AC70D373180A6D9D00B1C2DF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC70D348180A6D9D00B1C2DF /* Moto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC70D37B180A6D9D00B1C2DF /* Build configuration list for PBXNativeTarget "Moto" */;
+			buildPhases = (
+				AC70D345180A6D9D00B1C2DF /* Sources */,
+				AC70D346180A6D9D00B1C2DF /* Frameworks */,
+				AC70D347180A6D9D00B1C2DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Moto;
+			productName = Moto;
+			productReference = AC70D349180A6D9D00B1C2DF /* Moto.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC70D341180A6D9D00B1C2DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Moto Team";
+			};
+			buildConfigurationList = AC70D344180A6D9D00B1C2DF /* Build configuration list for PBXProject "Moto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AC70D340180A6D9D00B1C2DF;
+			productRefGroup = AC70D34A180A6D9D00B1C2DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC70D348180A6D9D00B1C2DF /* Moto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC70D347180A6D9D00B1C2DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC40ABA91813471A00350CA6 /* click.png in Resources */,
+				AC0986F518263D0300489784 /* AppIcon60x60.png in Resources */,
+				AC0986F818263D0300489784 /* AppIcon76x76@2x.png in Resources */,
+				AC0986F418263D0300489784 /* AppIcon40x40@2x.png in Resources */,
+				AC70D357180A6D9D00B1C2DF /* InfoPlist.strings in Resources */,
+				AC40ABAD18135FC500350CA6 /* cancel.png in Resources */,
+				AC0986F118263D0300489784 /* AppIcon29x29.png in Resources */,
+				AC0986F218263D0300489784 /* AppIcon29x29@2x.png in Resources */,
+				AC70D35F180A6D9D00B1C2DF /* Default.png in Resources */,
+				AC70D361180A6D9D00B1C2DF /* Default@2x.png in Resources */,
+				AC0986F718263D0300489784 /* AppIcon76x76.png in Resources */,
+				AC0986F318263D0300489784 /* AppIcon40x40.png in Resources */,
+				AC0986F618263D0300489784 /* AppIcon60x60@2x.png in Resources */,
+				AC70D363180A6D9D00B1C2DF /* Default-568h@2x.png in Resources */,
+				AC70D385180A6E6800B1C2DF /* MotoViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC70D345180A6D9D00B1C2DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC70D359180A6D9D00B1C2DF /* main.m in Sources */,
+				AC70D35D180A6D9D00B1C2DF /* AppDelegate.m in Sources */,
+				AC0986C21824F81F00489784 /* UIImage+RoundedCorner.m in Sources */,
+				AC72217818224E1B004DDAA5 /* UIImage+Extra.m in Sources */,
+				AC0986C01824F81F00489784 /* UIImage+Alpha.m in Sources */,
+				AC70D384180A6E6800B1C2DF /* MotoViewController.m in Sources */,
+				AC0986C11824F81F00489784 /* UIImage+Resize.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC70D355180A6D9D00B1C2DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC70D356180A6D9D00B1C2DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AC70D373180A6D9D00B1C2DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC70D374180A6D9D00B1C2DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC70D379180A6D9D00B1C2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AC70D37A180A6D9D00B1C2DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC70D37C180A6D9D00B1C2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Moto/Moto-Prefix.pch";
+				INFOPLIST_FILE = "Moto/Moto-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/WeChat",
+				);
+				PRODUCT_NAME = Moto;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AC70D37D180A6D9D00B1C2DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Moto/Moto-Prefix.pch";
+				INFOPLIST_FILE = "Moto/Moto-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/WeChat",
+				);
+				PRODUCT_NAME = Moto;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC70D344180A6D9D00B1C2DF /* Build configuration list for PBXProject "Moto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC70D379180A6D9D00B1C2DF /* Debug */,
+				AC70D37A180A6D9D00B1C2DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC70D37B180A6D9D00B1C2DF /* Build configuration list for PBXNativeTarget "Moto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC70D37C180A6D9D00B1C2DF /* Debug */,
+				AC70D37D180A6D9D00B1C2DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC70D341180A6D9D00B1C2DF /* Project object */;
+}
