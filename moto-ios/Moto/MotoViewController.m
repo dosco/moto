@@ -51,7 +51,7 @@ AVCaptureDevice *backCamera;
 
         [self.view addSubview:cameraViewTop];
         [self.view addSubview:cameraViewBottom];
-
+        
         backCameraStillImageOutput = [[AVCaptureStillImageOutput alloc] init];
         frontCameraStillImageOutput = [[AVCaptureStillImageOutput alloc] init];
         
@@ -66,12 +66,15 @@ AVCaptureDevice *backCamera;
                                     stillImageOutput:frontCameraStillImageOutput];
         
         cancelButton.hidden = true;
+        addButton.hidden = true;
+
         
-        [self.view bringSubviewToFront:MyButton];
+        [self.view bringSubviewToFront:mainButton];
         [self.view bringSubviewToFront:cancelButton];
-        
+        [self.view bringSubviewToFront:addButton];
+
         [backCameraSession startRunning];
-        
+
     }
     return self;
 }
@@ -200,7 +203,7 @@ AVCaptureDevice *backCamera;
      }];
 }
 
-- (IBAction)MyButtonClicked:(id)sender {
+- (IBAction)mainButtonClicked:(id)sender {
     if (photoState == NONE)
     {
         cancelButton.hidden = false;
@@ -218,27 +221,45 @@ AVCaptureDevice *backCamera;
             frontImage = image;
             [frontCameraSession stopRunning];
             
-            finalImage = [self addImage:backImage  secondImage:frontImage ];
-            [self sendImageContentToWeixin:finalImage];
-            
-            //UIImageWriteToSavedPhotosAlbum(finalImage, nil, nil, nil);
+            finalImage = [self addImage:backImage  secondImage:frontImage];
+            [mainButton setTitle:@"SHARE" forState:UIControlStateNormal];
+            addButton.hidden = false;
+
+            photoState = FRONTCAM_DONE;
         }];
-        photoState = FRONTCAM_DONE;
+    }
+    else if(photoState == FRONTCAM_DONE) {
+        UIImageWriteToSavedPhotosAlbum(finalImage, nil, nil, nil);
+        [self sendImageContentToWeixin:finalImage];
+
+        photoState = SHARE_DONE;
+        [self resetView];
     }
 }
 
 - (IBAction)cancelButtonClicked:(id)sender {
+    [self resetView];
+}
+
+- (IBAction)addButtonClicked:(id)sender {
+    if(photoState == FRONTCAM_DONE) {
+        UIImageWriteToSavedPhotosAlbum(finalImage, nil, nil, nil);
+        [self showAutoHideDialog:@"Saved To Photos"];
+    }
+}
+
+- (void) resetView {
     photoState = NONE;
-    
     cancelButton.hidden = true;
+    addButton.hidden = true;
+
+    [mainButton setTitle:@"CLICK" forState:UIControlStateNormal];
+    
     [backCameraSession stopRunning];
     [frontCameraSession stopRunning];
     
-    NSLog(@"hello");
-    
     [backCameraSession startRunning];
 }
-
 
 - (UIImage*)addImage:(UIImage *)image secondImage:(UIImage *)image2
 {
@@ -303,10 +324,25 @@ AVCaptureDevice *backCamera;
     }
 }
 
+- (void)showAutoHideDialog:(NSString *) message
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+    [alertView setBackgroundColor:[UIColor blackColor]];
+    [alertView show];
+    
+    int64_t delayInSeconds = 1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [alertView dismissWithClickedButtonIndex:0 animated:YES];
+
+    });
+}
+
 
 - (void)fillLayer:(CALayer *)layer color:(UIColor *)color
 {
-    /*
+        /*
     UIGraphicsBeginImageContext(layer.frame.size);
 
     CGContextRef context = UIGraphicsGetCurrentContext();

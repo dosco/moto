@@ -11,9 +11,10 @@
 
 @interface MotoViewController : UIViewController <UINavigationControllerDelegate> {
     
-    IBOutlet UIButton *MyButton;
-    
+    IBOutlet UIButton *mainButton;
     IBOutlet UIButton *cancelButton;
+    IBOutlet UIButton *addButton;
+    
     UIImageView *frontImageView;
     UIImageView *backImageView;
     
@@ -25,10 +26,13 @@
 typedef NS_ENUM(NSInteger, PhotoStateType) {
     NONE,
     FRONTCAM_DONE,
-    BACKCAM_DONE
+    BACKCAM_DONE,
+    SHARE_DONE
 };
 
-- (IBAction)MyButtonClicked:(id)sender;
+- (IBAction)mainButtonClicked:(id)sender;
 - (IBAction)cancelButtonClicked:(id)sender;
+- (IBAction)addButtonClicked:(id)sender;
+
 
 @end

@@ -5,11 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TestViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MotoViewController">
             <connections>
-                <outlet property="MyButton" destination="4" id="14"/>
-                <outlet property="cancelButton" destination="aTP-Hz-S3b" id="S4Q-E4-IxE"/>
-                <outlet property="view" destination="1" id="3"/>
+                <outlet property="addButton" destination="KIb-R5-chO" id="DsC-5Q-phY"/>
+                <outlet property="cancelButton" destination="aTP-Hz-S3b" id="D8d-91-Qhf"/>
+                <outlet property="mainButton" destination="4" id="knP-rj-wzq"/>
+                <outlet property="view" destination="1" id="9oM-nB-WtF"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,24 +22,35 @@
                     <rect key="frame" x="110" y="234" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <state key="normal" title="Take Pictures" image="click.png"/>
+                    <state key="normal" title="Click" backgroundImage="click.png"/>
                     <connections>
-                        <action selector="MyButtonClicked:" destination="-1" eventType="touchDown" id="15"/>
+                        <action selector="mainButtonClicked:" destination="-1" eventType="touchDown" id="H5R-vh-F08"/>
                     </connections>
                 </button>
                 <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTP-Hz-S3b">
                     <rect key="frame" x="269" y="25" width="41" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" image="cancel.png">
+                    <state key="normal" title="Cancel" image="cancel.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="cancelButtonClicked:" destination="-1" eventType="touchDown" id="0SX-cm-rPU"/>
                     </connections>
                 </button>
+                <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIb-R5-chO">
+                    <rect key="frame" x="269" y="94" width="41" height="41"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Add" image="add.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addButtonClicked:" destination="-1" eventType="touchDown" id="hqa-ef-y2Z"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <accessibility key="accessibilityConfiguration">
                 <accessibilityTraits key="traits" none="YES" button="YES"/>
             </accessibility>
@@ -47,7 +59,8 @@
         </view>
     </objects>
     <resources>
-        <image name="cancel.png" width="54" height="54"/>
+        <image name="add.png" width="100" height="100"/>
+        <image name="cancel.png" width="100" height="100"/>
         <image name="click.png" width="100" height="100"/>
     </resources>
 </document>

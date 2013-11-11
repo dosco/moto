@@ -37,6 +37,7 @@
 		AC70D384180A6E6800B1C2DF /* MotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC70D382180A6E6800B1C2DF /* MotoViewController.m */; };
 		AC70D385180A6E6800B1C2DF /* MotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC70D383180A6E6800B1C2DF /* MotoViewController.xib */; };
 		AC72217818224E1B004DDAA5 /* UIImage+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = AC72217718224E1B004DDAA5 /* UIImage+Extra.m */; };
+		ACB600D818301F2E009FE1C9 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB600D718301F2E009FE1C9 /* add.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		AC70D383180A6E6800B1C2DF /* MotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MotoViewController.xib; sourceTree = "<group>"; };
 		AC72217618224E1B004DDAA5 /* UIImage+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extra.h"; sourceTree = "<group>"; };
 		AC72217718224E1B004DDAA5 /* UIImage+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extra.m"; sourceTree = "<group>"; };
+		ACB600D718301F2E009FE1C9 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		AC40ABA51813471A00350CA6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				ACB600D718301F2E009FE1C9 /* add.png */,
 				AC0986E918263D0300489784 /* AppIcon29x29.png */,
 				AC0986EA18263D0300489784 /* AppIcon29x29@2x.png */,
 				AC0986EB18263D0300489784 /* AppIcon40x40.png */,
@@ -286,6 +289,7 @@
 				AC40ABA91813471A00350CA6 /* click.png in Resources */,
 				AC0986F518263D0300489784 /* AppIcon60x60.png in Resources */,
 				AC0986F818263D0300489784 /* AppIcon76x76@2x.png in Resources */,
+				ACB600D818301F2E009FE1C9 /* add.png in Resources */,
 				AC0986F418263D0300489784 /* AppIcon40x40@2x.png in Resources */,
 				AC70D357180A6D9D00B1C2DF /* InfoPlist.strings in Resources */,
 				AC40ABAD18135FC500350CA6 /* cancel.png in Resources */,
