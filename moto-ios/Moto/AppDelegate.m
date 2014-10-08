@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     if (![WXApi registerApp:@"wx9bbf70e1785db787"]) {
-        NSLog(@"Failed to register with Weixin");
+        NSLog(@"Failed to register with WeChat");
     }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -61,7 +61,7 @@
 - (void) onResp:(BaseResp*)resp {
     if([resp isKindOfClass:[SendMessageToWXResp class]]) {
         NSString *strMsg = [NSString stringWithFormat:@"Result:%d", resp.errCode];
-        NSLog(@"Response from Weixin was: %@",strMsg);
+        NSLog(@"Response from WeChat was: %@",strMsg);
     }
 }
 

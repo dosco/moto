@@ -11,6 +11,7 @@
 
 @interface MotoViewController : UIViewController <UINavigationControllerDelegate> {
     
+    IBOutlet UIButton *shareAppButton;
     IBOutlet UIButton *mainButton;
     IBOutlet UIButton *cancelButton;
     IBOutlet UIButton *addButton;
@@ -30,6 +31,7 @@ typedef NS_ENUM(NSInteger, PhotoStateType) {
     SHARE_DONE
 };
 
+- (IBAction)shareAppButtonClicked:(id)sender;
 - (IBAction)mainButtonClicked:(id)sender;
 - (IBAction)cancelButtonClicked:(id)sender;
 - (IBAction)addButtonClicked:(id)sender;

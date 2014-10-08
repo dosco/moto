@@ -12,7 +12,7 @@
 #import <ImageIO/CGImageProperties.h>
 
 #import "UIImage+Extra.h"
-#import "UIImage+Resize.h"
+//#import "UIImage+Resize.h"
 
 #import "MotoViewController.h"
 #import "WXApiObject.h"
@@ -65,13 +65,21 @@ AVCaptureDevice *backCamera;
                                               device:frontCamera
                                     stillImageOutput:frontCameraStillImageOutput];
         
-        cancelButton.hidden = true;
-        addButton.hidden = true;
+        CALayer * layer = [shareAppButton layer];
+        [layer setMasksToBounds:YES];
+        [layer setCornerRadius:0.0];
+        [layer setBorderWidth:1.0];
+        [layer setBorderColor:[[UIColor grayColor] CGColor]];
+        [shareAppButton setTitle:NSLocalizedString(@"SHARE APP", nil) forState:UIControlStateNormal];
+        [shareAppButton setEnabled:false];
 
-        
+        [self.view bringSubviewToFront:shareAppButton];
+        [self.view bringSubviewToFront:addButton];
         [self.view bringSubviewToFront:mainButton];
         [self.view bringSubviewToFront:cancelButton];
         [self.view bringSubviewToFront:addButton];
+        
+        [self resetView];
 
         [backCameraSession startRunning];
 
@@ -139,11 +147,12 @@ AVCaptureDevice *backCamera;
     
     bail:
     if (error) {
+        NSString *errorMsg = NSLocalizedString(@"Failed with error %d", nil);
         UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:[NSString stringWithFormat:@"Failed with error %d", (int)[error code]]
+                                  initWithTitle:[NSString stringWithFormat:errorMsg, (int)[error code]]
                                     message:[error localizedDescription]
                                     delegate:nil
-                                    cancelButtonTitle:@"Dismiss"
+                                    cancelButtonTitle:NSLocalizedString(@"Ok", nil)
                                     otherButtonTitles:nil];
         
         [alertView show];
@@ -203,6 +212,12 @@ AVCaptureDevice *backCamera;
      }];
 }
 
+- (IBAction)shareAppButtonClicked:(id)sender {
+    [self sendTextMessageContentToWeixin:NSLocalizedString(@"You just have to try this app.", nil)
+                                     url:@"http://itunes.apple.com/app/id378458261"];
+}
+
+
 - (IBAction)mainButtonClicked:(id)sender {
     if (photoState == NONE)
     {
@@ -222,7 +237,7 @@ AVCaptureDevice *backCamera;
             [frontCameraSession stopRunning];
             
             finalImage = [self addImage:backImage  secondImage:frontImage];
-            [mainButton setTitle:@"SHARE" forState:UIControlStateNormal];
+            [mainButton setTitle:NSLocalizedString(@"SHARE", nil) forState:UIControlStateNormal];
             addButton.hidden = false;
 
             photoState = FRONTCAM_DONE;
@@ -244,7 +259,7 @@ AVCaptureDevice *backCamera;
 - (IBAction)addButtonClicked:(id)sender {
     if(photoState == FRONTCAM_DONE) {
         UIImageWriteToSavedPhotosAlbum(finalImage, nil, nil, nil);
-        [self showAutoHideDialog:@"Saved To Photos"];
+        [self showAutoHideDialog:NSLocalizedString(@"Saved To Photos", nil)];
     }
 }
 
@@ -253,7 +268,7 @@ AVCaptureDevice *backCamera;
     cancelButton.hidden = true;
     addButton.hidden = true;
 
-    [mainButton setTitle:@"CLICK" forState:UIControlStateNormal];
+    [mainButton setTitle:NSLocalizedString(@"Click", nil) forState:UIControlStateNormal];
     
     [backCameraSession stopRunning];
     [frontCameraSession stopRunning];
@@ -283,20 +298,44 @@ AVCaptureDevice *backCamera;
     return newImage;
 }
 
-- (void) sendImageContentToWeixin:(UIImage *)image {
-    //if the Weixin app is not installed, show an error
+
+- (bool)isWeChatAppInstalled {
+    //if the WeChat app is not installed, show an error
     if (![WXApi isWXAppInstalled]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"The Weixin app is not installed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:NSLocalizedString(@"WeChat app is not installed", nil)
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                              otherButtonTitles: nil];
         [alert show];
+        return false;
+    }
+    
+    return true;
+}
+
+
+- (void)sendWeChatRequest:(SendMessageToWXReq *)req {
+    //try to send the request
+    if (![WXApi sendReq:req]) {
+        NSString *errorMsg = NSLocalizedString(@"WeChat Error could not send the message.", nil);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:errorMsg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
+}
+
+- (void) sendImageContentToWeixin:(UIImage *)image {
+    if (![self isWeChatAppInstalled]) {
         return;
     }
+    
     //create a message object
     WXMediaMessage *message = [WXMediaMessage message];
+    [message setTitle: NSLocalizedString(@"Moto Picture", nil)];
     
     //set the thumbnail image. This MUST be less than 32kb, or sendReq may return NO.
     //we'll just use the full image resized to 100x100 pixels for now
     [message setThumbImage:[image resizedImage:CGSizeMake(80,142) interpolationQuality:kCGInterpolationDefault]];
-    [message setTitle:@"Enjoy this Moto. http://test.com/"];
 
     //create an image object and set the image data as a JPG representation of our UIImage
     WXImageObject *ext = [WXImageObject object];
@@ -306,23 +345,48 @@ AVCaptureDevice *backCamera;
     //create a request
     SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
     
-    //this is a multimedia message, not a text message
+    //NO for multimedia message, YES if text message
     req.bText = NO;
     
     //set the message
     req.message = message;
+    req.scene = WXSceneSession;
     
+    [self sendWeChatRequest:req];
+}
+
+- (void) sendTextMessageContentToWeixin:(NSString *) messageTexts url:(NSString *)url {
+    if (![self isWeChatAppInstalled]) {
+        return;
+    }
+    //create a message object
+    WXMediaMessage *message = [WXMediaMessage message];
+    [message setTitle: NSLocalizedString(@"Moto Message", nil)];
+    [message setDescription:messageTexts];
+    
+    if(url) {
+        WXWebpageObject *ext = [WXWebpageObject object];
+        [ext setWebpageUrl:url];
+        [message setMediaObject:ext];
+    }
+    
+    //create a request
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    
+    //this is a multimedia message, not a text message
+    req.bText = (url) ? NO : YES;
+    
+    //set the message
+    req.message = message;
     
     //set the "scene", WXSceneTimeline is for "moments". WXSceneSession allows the user to send a message to friends
-    //req.scene = WXSceneSession;
+    req.scene = WXSceneSession;
     //req.scene = WXSceneTimeline;
     
     //try to send the request
-    if (![WXApi sendReq:req]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Error" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alert show];
-    }
+    [self sendWeChatRequest:req];
 }
+
 
 - (void)showAutoHideDialog:(NSString *) message
 {

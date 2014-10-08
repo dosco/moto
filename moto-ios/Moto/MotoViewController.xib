@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MotoViewController">
@@ -10,6 +10,7 @@
                 <outlet property="addButton" destination="KIb-R5-chO" id="DsC-5Q-phY"/>
                 <outlet property="cancelButton" destination="aTP-Hz-S3b" id="D8d-91-Qhf"/>
                 <outlet property="mainButton" destination="4" id="knP-rj-wzq"/>
+                <outlet property="shareAppButton" destination="guf-z1-CQz" id="wGF-Ge-0Tq"/>
                 <outlet property="view" destination="1" id="9oM-nB-WtF"/>
             </connections>
         </placeholder>
@@ -22,7 +23,7 @@
                     <rect key="frame" x="110" y="234" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <state key="normal" title="Click" backgroundImage="click.png"/>
+                    <state key="normal" backgroundImage="click.png"/>
                     <connections>
                         <action selector="mainButtonClicked:" destination="-1" eventType="touchDown" id="H5R-vh-F08"/>
                     </connections>
@@ -47,6 +48,17 @@
                     </state>
                     <connections>
                         <action selector="addButtonClicked:" destination="-1" eventType="touchDown" id="hqa-ef-y2Z"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guf-z1-CQz">
+                    <rect key="frame" x="90" y="518" width="154" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Share App">
+                        <color key="titleColor" red="1" green="0.16387946231415107" blue="0.12739479824640332" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="shareAppButtonClicked:" destination="-1" eventType="touchUpInside" id="R6p-rS-ckg"/>
                     </connections>
                 </button>
             </subviews>
