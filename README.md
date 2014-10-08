@@ -6,3 +6,5 @@ a full view of whatsup. It lets you instantly share the picture on WeChat. I now
 app called FrontBack that does this but there is a lot more that can be done (video hint hint)
 
 It also supports localization (chinese) as I was trying to translate the app to use with a friend.
+
+![alt tag](https://pbs.twimg.com/media/BzaEQSMCAAAdECr.jpg)
